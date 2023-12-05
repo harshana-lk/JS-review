@@ -168,11 +168,19 @@ newGenre;
 const updateBook = { ...book, moviePublicationDate: "2000-05-12", pages: 1210 }; //spread operator using in objects
 updateBook;
 
-const summury = `${title},a ${pages}-page long book, was written by ${author} and published in ${
-  publicationDate.split("-")[0]
-}.the book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
+const getYear = (str) => str.split("-")[0]; //Arrow functions
+
+console.log(getYear(publicationDate));
+
+const summury = `${title},a ${pages}-page long book, was written by ${author} and published in ${getYear(
+  publicationDate
+)}.the book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
 summury;
 
 const pagesRange = pages > 1000 ? "over a thousands" : "less than thounsand";
 console.log(pagesRange);
 console.log(`the book has ${pagesRange} pages`);
+
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
