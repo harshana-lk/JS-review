@@ -145,7 +145,7 @@ function getBook(id) {
 
 // Desturcturing
 
-const book = getBook(2);
+const book = getBook(1);
 book;
 
 // const title = book.title
@@ -159,4 +159,11 @@ console.log(author, title, genres);
 // const primaryGenre = genres[0]
 // const secondaryGenre = genres[1]
 
-const { primaryGenre, secondaryGenre } = genres;
+const { primaryGenre, secondaryGenre, ...otherGenre } = genres; //rest operator
+console.log(primaryGenre, secondaryGenre, otherGenre);
+
+const newGenre = ["Epic fantasy", ...genres]; //spread operator
+newGenre;
+
+const updateBook = { ...book, moviePublicationDate: "2000-05-12", pages: 1210 }; //spread operator using in objects
+updateBook;
