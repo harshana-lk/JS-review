@@ -145,7 +145,7 @@ function getBook(id) {
 
 // Desturcturing
 
-const book = getBook(1);
+const book = getBook(2);
 book;
 
 // const title = book.title
@@ -170,5 +170,9 @@ updateBook;
 
 const summury = `${title},a ${pages}-page long book, was written by ${author} and published in ${
   publicationDate.split("-")[0]
-}`;
+}.the book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
 summury;
+
+const pagesRange = pages > 1000 ? "over a thousands" : "less than thounsand";
+console.log(pagesRange);
+console.log(`the book has ${pagesRange} pages`);
