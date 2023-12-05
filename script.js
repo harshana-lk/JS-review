@@ -167,3 +167,8 @@ newGenre;
 
 const updateBook = { ...book, moviePublicationDate: "2000-05-12", pages: 1210 }; //spread operator using in objects
 updateBook;
+
+const summury = `${title},a ${pages}-page long book, was written by ${author} and published in ${
+  publicationDate.split("-")[0]
+}`;
+summury;
