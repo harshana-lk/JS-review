@@ -143,7 +143,9 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-// Desturcturing
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                      // Desturcturing
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const book = getBook(2);
 book;
@@ -159,6 +161,10 @@ console.log(author, title, genres);
 // const primaryGenre = genres[0]
 // const secondaryGenre = genres[1]
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                    //Rest & Spread Operator
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 const { primaryGenre, secondaryGenre, ...otherGenre } = genres; //rest operator
 console.log(primaryGenre, secondaryGenre, otherGenre);
 
@@ -167,6 +173,13 @@ newGenre;
 
 const updateBook = { ...book, moviePublicationDate: "2000-05-12", pages: 1210 }; //spread operator using in objects
 updateBook;
+
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                      //Arrow functions
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const getYear = (str) => str.split("-")[0]; //Arrow functions
 
@@ -181,6 +194,27 @@ const pagesRange = pages > 1000 ? "over a thousands" : "less than thounsand";
 console.log(pagesRange);
 console.log(`the book has ${pagesRange} pages`);
 
-// function getYear(str) {
-//   return str.split("-")[0];
-// }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                      //short-cuicuiting
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+console.log(true && "some String");
+console.log(false && "some String"); //short-curcuiting
+console.log(hasMovieAdaptation && "This book has a movie");
+
+//falsy: 0 , '' , null , undefined
+console.log("harshana" && "Some String");
+console.log(0 && "Some String");
+
+console.log(true || "Some String");
+console.log(false || "Some String");
+
+const spanishTranslation = book.translations.spanish || "Not Translated";
+spanishTranslation;
+
+const countWrong = book.reviews.librarything.reviewsCount || "No Data";
+countWrong;
+
+const count = book.reviews.librarything.reviewsCount ?? "No Data";
+count;
