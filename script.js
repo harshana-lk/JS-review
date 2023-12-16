@@ -271,3 +271,18 @@ adventureBooks;
 
 const pagesOfAllBooks = books.reduce((sum, book) => sum + book.pages, 0); // 0 is the starting value , sum means the current value of pages of books
 pagesOfAllBooks;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//the array sort method
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const arr = [3, 7, 1, 9, 6];
+const sorting = arr.slice().sort((a, b) => a - b); // by this trick we can make changes in array not affecting to the original array(arr)
+// by slice() method it returns a new array so we can make any changes without affecting to the original array(arr)
+arr;
+const sorted = arr.sort((a, b) => a - b); // this mutate the original array , it means when we sorted the array the original array(arr) also sorting
+sorted;
+arr;
+
+const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+sortedByPages;
